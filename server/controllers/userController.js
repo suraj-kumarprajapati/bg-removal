@@ -1,10 +1,13 @@
 import { Webhook } from "svix";
 import userModel from "../models/userModel.js";
+import connectDB from "../configs/dbConnect.js";
 
 // controller function to manage webhooks for clerk users
 // /api/user/webhooks
 const clerkWebhooks = async (req, res) => {
   try {
+    await connectDB();  // makes sure that db is connected in advance
+
     // create a new svix instance with clerk secret
     const wbhook = new Webhook(process.env.CLERK_WEBHOOK_SECRET);
 
