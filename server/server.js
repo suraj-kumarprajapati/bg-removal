@@ -16,9 +16,11 @@ app.use(express.json());
 app.use(cors());
 
 
-app.get("/", () => {
-    console.log('welcome to bg-removal');
-})
+app.get("/", (req, res) => {
+    res.json(200).json({
+        message : 'welcome to bg-removal';
+    });
+});
 
 
 
