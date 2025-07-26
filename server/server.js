@@ -16,6 +16,11 @@ app.use(express.json());
 app.use(cors());
 
 
+app.get("/", () => {
+    console.log('welcome to bg-removal');
+})
+
+
 
 app.listen(PORT, () => {
     console.log("server is running on PORT : " + PORT);
