@@ -17,7 +17,7 @@ app.use(cors());
 
 
 app.get("/", (req, res) => {
-    res.json(200).json({
+    res.status(200).json({
         message : 'welcome to bg-removal',
     });
 });
